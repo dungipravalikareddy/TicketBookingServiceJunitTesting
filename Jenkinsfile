@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-       // stage('git repo & clean') {
-          //  steps {
-               // bat "rmdir  /s /q TicketBookingServiceJunitTesting"
-              //  bat "git clone https://github.com/dungipravalikareddy/TicketBookingServiceJunitTesting.git"
-               // bat "mvn clean -f TicketBookingServiceJunitTesting"
+       stage('git repo & clean') {
+            steps {
+              //  bat "rmdir  /s /q TicketBookingServiceJunitTesting"
+                bat "git clone https://github.com/dungipravalikareddy/TicketBookingServiceJunitTesting.git"
+                bat "mvn clean -f TicketBookingServiceJunitTesting"
                 
-       //     }
-     //   }
+           }
+       }
         stage('install') {
             steps {
                 bat "mvn install -f TicketBookingServiceJunitTesting"
